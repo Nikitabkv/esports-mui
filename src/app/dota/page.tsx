@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {Box, Typography} from '@mui/material';
-import HomeGallery from "@/components/HomeGallery/HomeGallery";
+import {Box, Stack, Typography} from '@mui/material';
 import HomeNewsList from "@/components/HomeNewsList/HomeNewsList";
+import AsideCard from "@/components/AsideCard/AsideCard";
 
 const MainBoxSx = {
   display: 'flex',
@@ -11,11 +11,12 @@ const MainBoxSx = {
 const DotaPage = () => {
   return (
     <Box sx={MainBoxSx}>
-      <HomeGallery/>
-      <Typography variant='h2' color='#ff3535'>
-        Тестик
-      </Typography>
-      <HomeNewsList />
+        <Stack direction="row" spacing={1}>
+            <HomeNewsList/>
+            <Box component='aside' sx={{flexBasis: '352px'}}>
+                <AsideCard title={'Поплуярные статьи'}/>
+            </Box>
+        </Stack>
     </Box>
   );
 }
