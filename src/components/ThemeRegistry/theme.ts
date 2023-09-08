@@ -21,10 +21,21 @@ declare module "@mui/material/styles" {
     }
   }
 }
-
 declare module "@mui/material/Button" {
   interface ButtonPropsColorOverrides {
     buttons: true;
+  }
+}
+declare module '@mui/material/styles' {
+  interface BreakpointOverrides {
+    xs: false
+    sm: false
+    md: false
+    lg: false
+    xl: false
+    medium: true
+    default: true
+    large: true
   }
 }
 
@@ -82,7 +93,13 @@ const theme = createTheme({
   typography: {
     fontFamily: roboto.style.fontFamily,
   },
-  components: {},
+  breakpoints: {
+    values: {
+      medium: 0, // up to 899
+      default: 900, // up to 1439
+      large: 1440, // up to infinity
+    }
+  }
 });
 
 export default theme;

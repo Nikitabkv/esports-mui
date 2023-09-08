@@ -7,11 +7,17 @@ const NewsListItem: FC<any> = ({item}) => {
       <Link href={item.path} underline="none">
         <Stack direction="row">
           <CardMedia
-            sx={{flexBasis: '300px'}}
+            sx={{
+              flexBasis: '300px',
+              display: {
+                medium: "none",
+                default: "flex"
+              }
+            }}
             image={item.imagePath}
             title={item.title}
           />
-          <CardContent sx={{flexBasis: '740px'}}>
+          <CardContent sx={{flexBasis: '740px', padding: '0px'}}>
             <Stack spacing={1}>
               <Typography fontSize={20} color={'primary.contrastText'} fontWeight={500} variant='h3'>
                 {item.title}
@@ -24,7 +30,8 @@ const NewsListItem: FC<any> = ({item}) => {
                   {item.date}
                 </Typography>
               </Stack>
-              <Typography fontSize={13} color={'primary.dark'} component='span'>
+              <Typography fontSize={13} padding={'0px'} color={'primary.dark'} component='span'
+                          display={{medium: "none", default: "flex"}}>
                 {item.content}
               </Typography>
             </Stack>

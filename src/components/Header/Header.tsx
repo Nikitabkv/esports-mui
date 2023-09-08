@@ -35,6 +35,7 @@ const AppBarSx = {
 const ToolBarSx = {
   justifyContent: 'space-between',
   flexBasis: '1440px',
+  px: '24px',
 }
 const ButtonSx = {
   color: 'black',
@@ -50,7 +51,7 @@ const Header = () => {
       <Toolbar sx={ToolBarSx}>
 
         {/* Бургер меню */}
-        <Box display={{xs: 'flex', md: 'none'}}>
+        <Box display={{medium: 'flex', default: 'none',}}>
           <IconButton size="large" edge="start" color="inherit" aria-label="menu">
             <MenuIcon/>
           </IconButton>
@@ -64,7 +65,7 @@ const Header = () => {
         }}/>
 
         {/*Меню*/}
-        <Box flexGrow={1} display='flex' justifyContent='flex-end'>
+        <Box flexGrow={1} display={{medium: 'none', default: 'flex',}} justifyContent='flex-end'>
           <ButtonGroup variant="outlined" component="nav">
             {pages.map((page) => {
               return (

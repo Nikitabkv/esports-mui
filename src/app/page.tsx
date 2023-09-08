@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <Box sx={MainBoxSx}>
       <HomeGallery/>
-      <Stack direction="row" spacing={1}>
+      <Stack direction={{medium: "column", default: "row"}} spacing={1}>
         <HomeNewsList/>
         <Box component='aside' sx={{flexBasis: '352px'}}>
           <AsideCard title={'Поплуярные статьи'}/>
