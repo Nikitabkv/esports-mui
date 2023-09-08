@@ -8,7 +8,8 @@ const NewsListItem: FC<any> = ({item}) => {
         <Stack direction="row">
           <CardMedia
             sx={{
-              flexBasis: '300px',
+              height: '120px',
+              flexBasis: '225px',
               display: {
                 medium: "none",
                 default: "flex"
@@ -18,14 +19,14 @@ const NewsListItem: FC<any> = ({item}) => {
             title={item.title}
           />
           <CardContent sx={{
-            flexBasis: '740px',
+            display: 'flex',
+            flexBasis: '775px',
             '&:last-child': {
               padding: 0,
-              paddingBottom: {medium: 0, default: 3},
               paddingLeft: {medium: 0, default: 2}
             },
           }}>
-            <Stack spacing={1}>
+            <Stack spacing={1} justifyContent='space-evenly'>
               <Typography fontSize={{medium: 16, default: 20}} color={'primary.contrastText'} fontWeight={500}
                           variant='h3'>
                 {item.title}

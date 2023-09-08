@@ -5,23 +5,23 @@ import logo from '/public/test/logo-png.png'
 const pages = [
   {
     title: 'Новости',
-    link: '/esports-mui/'
+    link: '/'
   },
   {
     title: 'Dota 2',
-    link: '/esports-mui/dota'
+    link: '/dota'
   },
   {
     title: 'CS:GO',
-    link: '/esports-mui/csgo'
+    link: '/csgo'
   },
   {
     title: 'CFG Игроков',
-    link: '/esports-mui/cfg'
+    link: '/cfg'
   },
   {
     title: 'Прогнозы',
-    link: '/esports-mui/predictions'
+    link: '/predictions'
   }
 ]
 
