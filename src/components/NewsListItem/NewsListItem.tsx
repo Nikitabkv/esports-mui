@@ -21,6 +21,7 @@ const NewsListItem: FC<any> = ({item}) => {
             flexBasis: '740px',
             '&:last-child': {
               padding: 0,
+              paddingBottom: {medium: 0, default: 3},
               paddingLeft: {medium: 0, default: 2}
             },
           }}>
