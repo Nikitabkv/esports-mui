@@ -17,20 +17,27 @@ const NewsListItem: FC<any> = ({item}) => {
             image={item.imagePath}
             title={item.title}
           />
-          <CardContent sx={{flexBasis: '740px', padding: '0px'}}>
+          <CardContent sx={{
+            flexBasis: '740px',
+            '&:last-child': {
+              padding: 0,
+              paddingLeft: {medium: 0, default: 2}
+            },
+          }}>
             <Stack spacing={1}>
-              <Typography fontSize={20} color={'primary.contrastText'} fontWeight={500} variant='h3'>
+              <Typography fontSize={{medium: 16, default: 20}} color={'primary.contrastText'} fontWeight={500}
+                          variant='h3'>
                 {item.title}
               </Typography>
               <Stack direction="row" spacing={2}>
-                <Typography fontSize={13} color={'primary.contrastText'} component='span'>
+                <Typography fontSize={{medium: 11, default: 13}} color={'#ff3535'} component='span'>
                   {item.category}
                 </Typography>
-                <Typography fontSize={13} color={'primary.dark'} component='span'>
+                <Typography fontSize={{medium: 11, default: 13}} color={'primary.dark'} component='span'>
                   {item.date}
                 </Typography>
               </Stack>
-              <Typography fontSize={13} padding={'0px'} color={'primary.dark'} component='span'
+              <Typography fontSize={13} color={'primary.dark'} component='span'
                           display={{medium: "none", default: "flex"}}>
                 {item.content}
               </Typography>

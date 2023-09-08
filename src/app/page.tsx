@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Box, Stack} from '@mui/material';
 import HomeGallery from "@/components/HomeGallery/HomeGallery";
-import HomeNewsList from "@/components/HomeNewsList/HomeNewsList";
+import NewsList from "@/components/NewsList/NewsList";
 import AsideCard from "@/components/AsideCard/AsideCard";
 
 const MainBoxSx = {
@@ -14,8 +14,8 @@ const HomePage = () => {
     <Box sx={MainBoxSx}>
       <HomeGallery/>
       <Stack direction={{medium: "column", default: "row"}} spacing={1}>
-        <HomeNewsList/>
-        <Box component='aside' sx={{flexBasis: '352px'}}>
+        <NewsList/>
+        <Box display={{medium: 'none', default: 'flex'}} component='aside' sx={{flexBasis: '352px'}}>
           <AsideCard title={'Поплуярные статьи'}/>
         </Box>
       </Stack>

@@ -76,17 +76,22 @@ const gallery = [
   }
 ]
 
-const HomeNewsList = () => {
+const NewsList = () => {
   return (
-    <Box sx={{flexBasis: '1034px'}}>
+    <Box sx={{
+      flexBasis: {
+        medium: 'auto',
+        default: '1034px'
+      }
+    }}>
       <Stack spacing={1}>
         <Divider textAlign='left' sx={{'&:before': {width: '3%'}}}>
-          <Typography fontWeight={600} fontSize={14} color='#ff3535'>НОВОСТИ</Typography>
+          <Typography fontWeight={600} fontSize={{medium: 12, default: 14}} color='#ff3535'>НОВОСТИ</Typography>
         </Divider>
         <Stack spacing={1}>
           {gallery.map((item) => {
             return (
-              <Box key={item.title} p={2} boxShadow={1} borderRadius={1}>
+              <Box key={item.title} p={{medium: 1, default: 2}} boxShadow={1} borderRadius={1}>
                 <NewsListItem item={item}/>
               </Box>
             )
@@ -97,4 +102,4 @@ const HomeNewsList = () => {
   )
 }
 
-export default HomeNewsList
+export default NewsList

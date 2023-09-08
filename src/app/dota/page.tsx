@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {Box, Stack, Typography} from '@mui/material';
-import HomeNewsList from "@/components/HomeNewsList/HomeNewsList";
+import {Box, Stack} from '@mui/material';
+import NewsList from "@/components/NewsList/NewsList";
 import AsideCard from "@/components/AsideCard/AsideCard";
 
 const MainBoxSx = {
@@ -11,12 +11,12 @@ const MainBoxSx = {
 const DotaPage = () => {
   return (
     <Box sx={MainBoxSx}>
-        <Stack direction="row" spacing={1}>
-            <HomeNewsList/>
-            <Box component='aside' sx={{flexBasis: '352px'}}>
-                <AsideCard title={'Поплуярные статьи'}/>
-            </Box>
-        </Stack>
+      <Stack direction={{medium: "column", default: "row"}} spacing={1}>
+        <NewsList/>
+        <Box component='aside' sx={{flexBasis: '352px'}}>
+          <AsideCard title={'Поплуярные статьи'}/>
+        </Box>
+      </Stack>
     </Box>
   );
 }
