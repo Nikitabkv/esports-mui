@@ -1,4 +1,4 @@
-export interface HomeGalleryItemProps {
+export interface HomeGalleryItemMobileProps {
   index: number
   post: {
     date: string

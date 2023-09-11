@@ -1,14 +1,22 @@
 import {FC} from 'react'
 import {Card, CardContent, CardMedia, Link, Stack, SvgIcon, Typography} from "@mui/material";
-import {HomeGalleryItemProps} from "@/components/HomeGallery/HomeGalleryItem/HomeGalleryItem.interface";
+import {
+  HomeGalleryItemMobileProps
+} from "@/components/HomeGallery/HomeGalleryItemMobile/HomeGalleryItemMobile.interface";
+import {getDate} from "@/lib/utils/utils";
 
-const HomeGalleryItemMobile: FC<HomeGalleryItemProps> = ({item, index}) => {
+const HomeGalleryItemMobile: FC<HomeGalleryItemMobileProps> = ({post}) => {
   return (
     <Card sx={{boxShadow: 0}}>
-      <Link href={item.path} underline="none">
-        <CardMedia title={item.title}>
+      <Link href={post.link} underline="none">
+        <CardMedia title={post.title}>
           <CardContent
-            sx={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', '&:last-child': {padding: 1}}}>
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              '&:last-child': {paddingX: 0, paddingY: 1}
+            }}>
             <Stack direction='row' alignItems='center' spacing={2}>
               <SvgIcon>
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 50 50">
@@ -18,10 +26,10 @@ const HomeGalleryItemMobile: FC<HomeGalleryItemProps> = ({item, index}) => {
               </SvgIcon>
               <Stack direction='row' width='100%' alignItems='flex-end' justifyContent='space-between'>
                 <Typography fontSize={16} color={'primary.contrastText'} fontWeight={700} variant="h3">
-                  {item.title}
+                  {post.title}
                 </Typography>
                 <Typography fontSize={11} color={'primary.dark'} fontWeight={300} component="span">
-                  {item.date}
+                  {getDate(post.date)}
                 </Typography>
               </Stack>
             </Stack>

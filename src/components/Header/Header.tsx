@@ -1,27 +1,26 @@
 import {AppBar, Box, Button, ButtonGroup, IconButton, Link, SvgIcon, Toolbar, Typography} from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-import logo from '/public/test/logo-png.png'
 
 const pages = [
   {
     title: 'Новости',
-    link: '/'
+    link: '/esports-mui/'
   },
   {
     title: 'Dota 2',
-    link: '/dota'
+    link: '/esports-mui/dota'
   },
   {
     title: 'CS:GO',
-    link: '/csgo'
+    link: '/esports-mui/csgo'
   },
   {
     title: 'CFG Игроков',
-    link: '/cfg'
+    link: '/esports-mui/404'
   },
   {
     title: 'Прогнозы',
-    link: '/predictions'
+    link: '/esports-mui/404'
   }
 ]
 
@@ -58,11 +57,11 @@ const Header = () => {
         </Box>
 
         {/*Логотип*/}
-        <Link flexBasis={145} height={24.46} sx={{
-          backgroundImage: `url(${logo.src})`,
+        <Link flexBasis={145} height={24.46} href={'/'} sx={{
+          // backgroundImage: `url(${logo.src})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: '100% 100%'
-        }}/>
+        }}>Logotype</Link>
 
         {/*Меню*/}
         <Box flexGrow={1} display={{medium: 'none', default: 'flex',}} justifyContent='flex-end'>

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {Box} from '@mui/material';
-import NewsList from "@/components/NewsList/NewsList";
 
 const MainBoxSx = {
   display: 'flex',
@@ -10,7 +9,7 @@ const MainBoxSx = {
 const CsgoPage = () => {
   return (
     <Box sx={MainBoxSx}>
-      <NewsList/>
+      {/*<NewsList/>*/}
     </Box>
   );
 }

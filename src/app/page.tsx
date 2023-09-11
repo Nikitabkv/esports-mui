@@ -3,20 +3,23 @@ import {Box, Stack} from '@mui/material';
 import HomeGallery from "@/components/HomeGallery/HomeGallery";
 import NewsList from "@/components/NewsList/NewsList";
 import AsideCard from "@/components/AsideCard/AsideCard";
+import {getPosts} from "@/lib/api/testApi";
 
 const MainBoxSx = {
   display: 'flex',
   flexDirection: 'column',
 }
 
-const HomePage = () => {
+const HomePage = async () => {
+  const posts = await getPosts();
+
   return (
     <Box sx={MainBoxSx}>
-      <HomeGallery/>
+      <HomeGallery posts={posts.slice(0, 5)}/>
       <Stack direction={{medium: "column", default: "row"}} spacing={1}>
-        <NewsList/>
+        <NewsList posts={posts.slice(5)}/>
         <Box display={{medium: 'none', default: 'flex'}} component='aside' sx={{flexBasis: '352px'}}>
-          <AsideCard title={'Поплуярные статьи'}/>
+          <AsideCard posts={posts.slice(0, 10)} title={'Титл другой какой-то'}/>
         </Box>
       </Stack>
     </Box>

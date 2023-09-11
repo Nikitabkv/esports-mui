@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import Header from '@/components/Header/Header'
-import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
+import ThemeRegistry from '@/lib/ThemeRegistry/ThemeRegistry';
 import Footer from "@/components/Footer/Footer";
 
 export const metadata = {

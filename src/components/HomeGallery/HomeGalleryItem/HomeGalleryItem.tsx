@@ -1,8 +1,9 @@
 import {FC} from 'react'
 import {HomeGalleryItemProps} from "@/components/HomeGallery/HomeGalleryItem/HomeGalleryItem.interface";
 import {Card, CardContent, CardMedia, Link, Typography,} from "@mui/material";
+import {getDate} from "@/lib/utils/utils";
 
-const HomeGalleryItem: FC<HomeGalleryItemProps> = ({item, index}) => {
+const HomeGalleryItem: FC<HomeGalleryItemProps> = ({post, index}) => {
   const fontSizes = index === 0 ? {
     title: 28,
     meta: 13,
@@ -15,7 +16,7 @@ const HomeGalleryItem: FC<HomeGalleryItemProps> = ({item, index}) => {
 
   return (
     <Card sx={{gridArea: {gridArea}, boxShadow: 0}}>
-      <Link href={item.path} underline="none">
+      <Link href={post.link} underline="none">
         <CardMedia
           sx={{
             maxHeight: {height},
@@ -27,18 +28,18 @@ const HomeGalleryItem: FC<HomeGalleryItemProps> = ({item, index}) => {
               backgroundSize: 'auto 115%',
             }
           }}
-          image={item.imagePath}
-          title={item.title}
+          image={post.featuredImage.node.mediaDetails.sizes[0].sourceUrl}
+          title={post.featuredImage.node.altText}
         >
           <CardContent sx={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', gap: '5px'}}>
             <Typography fontSize={fontSizes.meta} color={'primary.dark'} fontWeight={600} component="span">
-              {item.category}
+              {post.categories.nodes[0].name === 'Без рубрики' ? 'Новости' : post.categories.nodes[0].name}
             </Typography>
             <Typography fontSize={fontSizes.title} color={'primary.main'} fontWeight={700} variant="h3">
-              {item.title}
+              {post.title}
             </Typography>
             <Typography fontSize={fontSizes.meta} color={'primary.dark'} fontWeight={300} component="span">
-              {item.date}
+              {getDate(post.date)}
             </Typography>
           </CardContent>
         </CardMedia>

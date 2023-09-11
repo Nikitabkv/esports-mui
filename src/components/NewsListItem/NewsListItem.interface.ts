@@ -1,5 +1,4 @@
-export interface HomeGalleryItemProps {
-  index: number
+export interface NewsListItemProps {
   post: {
     date: string
     link: string
