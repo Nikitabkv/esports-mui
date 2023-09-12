@@ -8,7 +8,7 @@ const AsideCardItem: FC<AsideCardItemProps> = ({post, isLast}) => {
     <>
       <ListItem sx={{'&:hover h3': {color: "#ff3535"}}}>
         <Stack direction='column' spacing={1}>
-          <Link href={post.link} color='primary.contrastText' underline="none">
+          <Link href={`/${post.slug}`} color='primary.contrastText' underline="none">
             <Typography fontSize={17} fontWeight={700} variant='h3'>
               {post.title}
             </Typography>

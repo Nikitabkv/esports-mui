@@ -7,6 +7,7 @@ export interface AsideCardItemProps {
   post: {
     date: string,
     link: string,
+    slug: string,
     excerpt: string,
     title: string,
     id: string

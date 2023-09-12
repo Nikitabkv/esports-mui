@@ -1,8 +1,7 @@
-export async function getPosts() {
+// определяем Content-Type для JSON
+const headers = {'Content-Type': 'application/json'};
 
-  // определяем Content-Type для JSON
-  const headers = {'Content-Type': 'application/json'};
-
+export const getPosts = async () => {
   // формируем GraphQL запрос
   const query = `
     query Test { 
@@ -10,6 +9,7 @@ export async function getPosts() {
         nodes {
           date
           link
+          slug
           excerpt
           title
           id
@@ -52,4 +52,45 @@ export async function getPosts() {
 
   // возвращаем посты
   return json.data?.posts.nodes;
+}
+
+export const getPost = async (slug: string | string[] | undefined) => {
+  const query = `
+    query SlugByPost {
+      post(id: "${slug}", idType: SLUG) {
+        title
+        content
+        excerpt
+        slug
+        featuredImage {
+          node {
+            link
+            altText
+            mediaDetails {
+              sizes(include: LARGE) {
+                file
+                sourceUrl
+              }
+            }
+          }
+        }
+      }
+    }
+  `
+
+  const res = await fetch('https://esports-24.ru/graphql', {
+    headers,
+    method: 'POST',
+    body: JSON.stringify({
+      query,
+    }),
+  });
+
+  const json = await res.json();
+
+  console.log(
+    'asd'
+  )
+
+  return json.data?.post;
 }

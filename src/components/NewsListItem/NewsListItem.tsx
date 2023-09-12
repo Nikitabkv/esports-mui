@@ -6,7 +6,7 @@ import {NewsListItemProps} from "@/components/NewsListItem/NewsListItem.interfac
 const NewsListItem: FC<NewsListItemProps> = ({post}) => {
   return (
     <Card sx={{'&:hover h3': {color: "#ff3535"}, boxShadow: 'none'}}>
-      <Link href={post.link} underline="none">
+      <Link href={`/${post.slug}`} underline="none">
         <Stack direction="row">
           <CardMedia
             sx={{

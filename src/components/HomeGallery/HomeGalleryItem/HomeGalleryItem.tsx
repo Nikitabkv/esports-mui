@@ -16,7 +16,7 @@ const HomeGalleryItem: FC<HomeGalleryItemProps> = ({post, index}) => {
 
   return (
     <Card sx={{gridArea: {gridArea}, boxShadow: 0}}>
-      <Link href={post.link} underline="none">
+      <Link href={`/${post.slug}`} underline="none">
         <CardMedia
           sx={{
             maxHeight: {height},

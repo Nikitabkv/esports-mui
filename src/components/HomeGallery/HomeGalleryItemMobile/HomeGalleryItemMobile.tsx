@@ -8,7 +8,7 @@ import {getDate} from "@/lib/utils/utils";
 const HomeGalleryItemMobile: FC<HomeGalleryItemMobileProps> = ({post}) => {
   return (
     <Card sx={{boxShadow: 0}}>
-      <Link href={post.link} underline="none">
+      <Link href={`/${post.slug}`} underline="none">
         <CardMedia title={post.title}>
           <CardContent
             sx={{
