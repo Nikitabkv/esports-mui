@@ -4,6 +4,7 @@ interface Post {
   excerpt: string
   title: string
   id: string
+  slug: string,
   categories: {
     nodes: Array<{ link: string, name: string }>
   }

@@ -9,7 +9,6 @@ export const getPosts = async () => {
         nodes {
           date
           link
-          slug
           excerpt
           title
           id
