@@ -1,5 +1,10 @@
 import {FC} from 'react'
-import {Card, CardContent, CardMedia, Link, Stack, Typography,} from '@mui/material';
+import Card from "@mui/material/Card"
+import CardContent from "@mui/material/CardContent"
+import CardMedia from "@mui/material/CardMedia"
+import Link from "@mui/material/Link"
+import Typography from "@mui/material/Typography"
+import Stack from "@mui/material/Stack"
 import {getDate} from "@/lib/utils/utils";
 import {NewsListItemProps} from "@/components/NewsListItem/NewsListItem.interface";
 

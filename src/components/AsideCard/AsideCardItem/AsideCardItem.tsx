@@ -1,6 +1,10 @@
-import {FC} from "react";
-import {Divider, Link, ListItem, Stack, Typography} from "@mui/material";
-import {AsideCardItemProps} from "@/components/AsideCard/AsideCardItem/AsideCardItem.interface";
+import {FC} from "react"
+import Divider from "@mui/material/Divider"
+import Link from "@mui/material/Link"
+import ListItem from "@mui/material/ListItem"
+import Stack from "@mui/material/Stack"
+import Typography from "@mui/material/Typography"
+import {AsideCardItemProps} from "@/components/AsideCard/AsideCardItem/AsideCardItem.interface"
 import {getDate} from "@/lib/utils/utils"
 
 const AsideCardItem: FC<AsideCardItemProps> = ({post, isLast}) => {

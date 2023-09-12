@@ -1,7 +1,6 @@
 'use client'
-import {Box} from "@mui/material";
-import {getPost} from "@/lib/api/api";
-import {usePathname} from 'next/navigation'
+import Box from "@mui/material/Box"
+import {getPost} from "@/lib/api/api"
 
 const headers = {'Content-Type': 'application/json'};
 const query = `
@@ -16,8 +15,7 @@ query Test {
 
 
 const ArticlePage = async ({params}: { params: { slug: string } }) => {
-  const pathname = usePathname().substring(1)
-  const post = await getPost(pathname)
+  const post = await getPost(params.slug)
 
   return (
     <Box>

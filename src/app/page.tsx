@@ -1,9 +1,9 @@
-import * as React from 'react';
-import {Box, Stack} from '@mui/material';
-import HomeGallery from "@/components/HomeGallery/HomeGallery";
-import NewsList from "@/components/NewsList/NewsList";
-import AsideCard from "@/components/AsideCard/AsideCard";
-import {getPosts} from "@/lib/api/api";
+import Box from '@mui/material/Box'
+import Stack from '@mui/material/Stack'
+import HomeGallery from "@/components/HomeGallery/HomeGallery"
+import NewsList from "@/components/NewsList/NewsList"
+import AsideCard from "@/components/AsideCard/AsideCard"
+import {getPosts} from "@/lib/api/api"
 
 const MainBoxSx = {
   display: 'flex',

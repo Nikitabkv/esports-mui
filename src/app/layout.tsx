@@ -1,7 +1,7 @@
-import Box from '@mui/material/Box';
+import Box from '@mui/material/Box'
 import Header from '@/components/Header/Header'
-import ThemeRegistry from '@/lib/ThemeRegistry/ThemeRegistry';
-import Footer from "@/components/Footer/Footer";
+import ThemeRegistry from '@/lib/ThemeRegistry/ThemeRegistry'
+import Footer from "@/components/Footer/Footer"
 
 export const metadata = {
   title: 'Esports-24.ru – киберспортивный онлайн-журнал: новости, прогнозы, турниры, CS:GO, DOTA 2',

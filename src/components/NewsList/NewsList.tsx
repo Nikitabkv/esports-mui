@@ -1,7 +1,10 @@
-import {Box, Divider, Stack, Typography} from '@mui/material';
+import Box from "@mui/material/Box"
+import Divider from "@mui/material/Divider"
+import Stack from "@mui/material/Stack"
+import Typography from "@mui/material/Typography"
 import {FC} from 'react'
-import {NewsListProps} from "@/components/NewsList/NewsList.interface";
-import NewsListItem from "@/components/NewsListItem/NewsListItem";
+import {NewsListProps} from "@/components/NewsList/NewsList.interface"
+import NewsListItem from "@/components/NewsListItem/NewsListItem"
 
 const NewsList: FC<NewsListProps> = ({posts}) => {
 

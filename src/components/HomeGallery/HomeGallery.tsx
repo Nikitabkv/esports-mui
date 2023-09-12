@@ -1,5 +1,6 @@
 import {FC} from 'react'
-import {Box, Divider} from "@mui/material"
+import Box from "@mui/material/Box"
+import Divider from "@mui/material/Divider"
 import HomeGalleryItem from "@/components/HomeGallery/HomeGalleryItem/HomeGalleryItem"
 import HomeGalleryItemMobile from "@/components/HomeGallery/HomeGalleryItemMobile/HomeGalleryItemMobile"
 import {HomeGalleryProps} from "@/components/HomeGallery/HomeGallery.interface";

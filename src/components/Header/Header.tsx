@@ -1,4 +1,12 @@
-import {AppBar, Box, Button, ButtonGroup, IconButton, Link, SvgIcon, Toolbar, Typography} from '@mui/material'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import ButtonGroup from '@mui/material/ButtonGroup'
+import IconButton from '@mui/material/IconButton'
+import Link from '@mui/material/Link'
+import SvgIcon from '@mui/material/SvgIcon'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
 import MenuIcon from '@mui/icons-material/Menu'
 
 const pages = [

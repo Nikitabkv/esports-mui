@@ -1,7 +1,11 @@
 import {FC} from 'react'
-import {HomeGalleryItemProps} from "@/components/HomeGallery/HomeGalleryItem/HomeGalleryItem.interface";
-import {Card, CardContent, CardMedia, Link, Typography,} from "@mui/material";
-import {getDate} from "@/lib/utils/utils";
+import {HomeGalleryItemProps} from "@/components/HomeGallery/HomeGalleryItem/HomeGalleryItem.interface"
+import Card from "@mui/material/Card"
+import CardContent from "@mui/material/CardContent"
+import CardMedia from "@mui/material/CardMedia"
+import Link from "@mui/material/Link"
+import Typography from "@mui/material/Typography"
+import {getDate} from "@/lib/utils/utils"
 
 const HomeGalleryItem: FC<HomeGalleryItemProps> = ({post, index}) => {
   const fontSizes = index === 0 ? {

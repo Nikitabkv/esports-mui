@@ -1,7 +1,10 @@
-import {Card, Divider, List, Typography} from "@mui/material";
-import {FC} from "react";
-import {AsideCardProps} from "@/components/AsideCard/AsideCard.interface";
-import AsideCardItem from "@/components/AsideCard/AsideCardItem/AsideCardItem";
+import Card from "@mui/material/Card"
+import Divider from "@mui/material/Divider"
+import List from "@mui/material/List"
+import Typography from "@mui/material/Typography"
+import {FC} from "react"
+import {AsideCardProps} from "@/components/AsideCard/AsideCard.interface"
+import AsideCardItem from "@/components/AsideCard/AsideCardItem/AsideCardItem"
 
 const AsideCard: FC<AsideCardProps> = ({title, posts}) => {
 

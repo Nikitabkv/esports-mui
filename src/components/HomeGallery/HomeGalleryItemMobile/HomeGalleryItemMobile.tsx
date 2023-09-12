@@ -1,5 +1,11 @@
 import {FC} from 'react'
-import {Card, CardContent, CardMedia, Link, Stack, SvgIcon, Typography} from "@mui/material";
+import Card from "@mui/material/Card"
+import CardContent from "@mui/material/CardContent"
+import CardMedia from "@mui/material/CardMedia"
+import Link from "@mui/material/Link"
+import Typography from "@mui/material/Typography"
+import Stack from "@mui/material/Stack"
+import SvgIcon from "@mui/material/SvgIcon"
 import {
   HomeGalleryItemMobileProps
 } from "@/components/HomeGallery/HomeGalleryItemMobile/HomeGalleryItemMobile.interface";
