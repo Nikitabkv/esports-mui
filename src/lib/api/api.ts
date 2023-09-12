@@ -88,9 +88,5 @@ export const getPost = async (slug: string | string[] | undefined) => {
 
   const json = await res.json();
 
-  console.log(
-    'asd'
-  )
-
   return json.data?.post;
 }
