@@ -4,23 +4,23 @@ import MenuIcon from '@mui/icons-material/Menu'
 const pages = [
   {
     title: 'Новости',
-    link: '/esports-mui/'
+    link: '/'
   },
   {
     title: 'Dota 2',
-    link: '/esports-mui/dota'
+    link: '/dota'
   },
   {
     title: 'CS:GO',
-    link: '/esports-mui/csgo'
+    link: '/csgo'
   },
   {
     title: 'CFG Игроков',
-    link: '/esports-mui/404'
+    link: '/404'
   },
   {
     title: 'Прогнозы',
-    link: '/esports-mui/404'
+    link: '/404'
   }
 ]
 
@@ -58,7 +58,6 @@ const Header = () => {
 
         {/*Логотип*/}
         <Link flexBasis={145} height={24.46} href={'/'} sx={{
-          // backgroundImage: `url(${logo.src})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: '100% 100%'
         }}>Logotype</Link>
