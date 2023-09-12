@@ -4,23 +4,23 @@ import MenuIcon from '@mui/icons-material/Menu'
 const pages = [
   {
     title: 'Новости',
-    link: '/'
+    link: '/esports-mui/'
   },
   {
     title: 'Dota 2',
-    link: '/dota'
+    link: '/esports-mui/dota'
   },
   {
     title: 'CS:GO',
-    link: '/csgo'
+    link: '/esports-mui/csgo'
   },
   {
     title: 'CFG Игроков',
-    link: '/404'
+    link: '/esports-mui/404'
   },
   {
     title: 'Прогнозы',
-    link: '/404'
+    link: '/esports-mui/404'
   }
 ]
 
