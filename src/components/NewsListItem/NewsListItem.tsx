@@ -22,7 +22,7 @@ const NewsListItem: FC<NewsListItemProps> = ({post}) => {
                 default: "flex"
               }
             }}
-            image={post.featuredImage.node.mediaDetails.sizes[0].sourceUrl}
+            image={`${post.featuredImage.node.mediaDetails.sizes[0].sourceUrl}.webp`}
             title={post.featuredImage.node.altText}
           />
           <CardContent sx={{

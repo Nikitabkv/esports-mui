@@ -32,7 +32,7 @@ const HomeGalleryItem: FC<HomeGalleryItemProps> = ({post, index}) => {
               backgroundSize: 'auto 115%',
             }
           }}
-          image={post.featuredImage.node.mediaDetails.sizes[0].sourceUrl}
+          image={`${post.featuredImage.node.mediaDetails.sizes[0].sourceUrl}.webp`}
           title={post.featuredImage.node.altText}
         >
           <CardContent sx={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', gap: '5px'}}>
