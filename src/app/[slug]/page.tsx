@@ -34,8 +34,6 @@ export async function generateStaticParams() {
     }),
   }).then((res) => res.json())
 
-  console.log('posts')
-
   return posts.map((post: { slug: any; }) => ({
     slug: post.slug,
   }))
