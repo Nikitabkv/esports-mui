@@ -17,7 +17,7 @@ const HomePage = async () => {
     <Box sx={MainBoxSx}>
       <HomeGallery posts={posts.slice(0, 5)}/>
       <Stack direction={{medium: "column", default: "row"}} spacing={1}>
-        <NewsList posts={posts.slice(5)}/>
+        <NewsList posts={posts.slice(5, 25)}/>
         <Box display={{medium: 'none', default: 'flex'}} component='aside' sx={{flexBasis: '352px'}}>
           <AsideCard posts={posts.slice(0, 10)} title={'Титл другой какой-то'}/>
         </Box>

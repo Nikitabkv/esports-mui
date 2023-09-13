@@ -16,7 +16,7 @@ const DotaPage = async () => {
   return (
     <Box sx={MainBoxSx}>
       <Stack direction={{medium: "column", default: "row"}} spacing={1}>
-        <NewsList posts={posts}/>
+        <NewsList posts={posts.slice(0, 20)}/>
         <Box component='aside' sx={{flexBasis: '352px'}}>
           <AsideCard posts={posts} title={'Поплуярные статьи'}/>
         </Box>

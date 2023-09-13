@@ -1,21 +1,23 @@
 'use client'
 import Box from "@mui/material/Box"
 import {getPost} from "@/lib/api/api"
+import {usePathname} from "next/navigation";
 
-const headers = {'Content-Type': 'application/json'};
-const query = `
-query Test { 
-  posts(first: 100) {
-    nodes {
-      slug
-    }
-  }
-}
-`
+// const headers = {'Content-Type': 'application/json'};
+// const query = `
+// query Test {
+//   posts(first: 100) {
+//     nodes {
+//       slug
+//     }
+//   }
+// }
+// `
 
 
-const ArticlePage = async ({params}: { params: { slug: string } }) => {
-  const post = await getPost(params.slug)
+const ArticlePage = async () => {
+  const pathname = usePathname()
+  const post = await getPost(pathname)
 
   return (
     <Box>
@@ -25,18 +27,18 @@ const ArticlePage = async ({params}: { params: { slug: string } }) => {
   )
 }
 
-export async function generateStaticParams() {
-  const posts = await fetch('https:/esports-24.ru/graphql', {
-    headers,
-    method: 'POST',
-    body: JSON.stringify({
-      query,
-    }),
-  }).then((res) => res.json())
-
-  return posts.map((post: { slug: any; }) => ({
-    slug: post.slug,
-  }))
-}
+// export async function generateStaticParams() {
+//   const posts = await fetch('https:/esports-24.ru/graphql', {
+//     headers,
+//     method: 'POST',
+//     body: JSON.stringify({
+//       query,
+//     }),
+//   }).then((res) => res.json())
+//
+//   return posts.map((post: { slug: any; }) => ({
+//     slug: post.slug,
+//   }))
+// }
 
 export default ArticlePage
