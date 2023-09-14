@@ -1,4 +1,6 @@
 // определяем Content-Type для JSON
+import {redirect} from "next/navigation";
+
 const headers = {'Content-Type': 'application/json'};
 
 export const getPosts = async () => {
@@ -93,6 +95,10 @@ export const getPost = async (slug: string | string[] | undefined) => {
   });
 
   const json = await res.json();
+
+  if (json.data?.post === null) {
+    return redirect('/')
+  }
 
   return json.data?.post;
 }

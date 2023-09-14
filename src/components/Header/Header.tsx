@@ -2,12 +2,17 @@ import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import ButtonGroup from '@mui/material/ButtonGroup'
-import IconButton from '@mui/material/IconButton'
 import Link from '@mui/material/Link'
 import SvgIcon from '@mui/material/SvgIcon'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import MenuIcon from '@mui/icons-material/Menu'
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary"
+import AccordionDetails from "@mui/material/AccordionDetails"
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Stack from '@mui/material/Stack';
 
 const pages = [
   {
@@ -57,21 +62,44 @@ const Header = () => {
     <AppBar position="static" sx={AppBarSx}>
       <Toolbar sx={ToolBarSx}>
 
-        {/* Бургер меню */}
-        <Box display={{medium: 'flex', default: 'none',}}>
-          <IconButton size="large" edge="start" color="inherit" aria-label="menu">
-            <MenuIcon/>
-          </IconButton>
-        </Box>
+        {/* Мобильное меню */}
+        <Accordion sx={{boxShadow: 0}}>
+
+          <Stack direction='row' alignItems='center' width='100%'>
+            <AccordionSummary
+              expandIcon={<MenuIcon />}
+            />
+
+            <Link flexBasis={145} height={24.46} href={'/'} sx={{
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '100% 100%'
+            }}>Logotype</Link>
+          </Stack>
+
+          <AccordionDetails>
+            <List>
+              {pages.map((item) => (
+                <Link key={item.title} href={item.link} underline='none'>
+                  <ListItem>
+                    <Typography color='primary.contrastText' noWrap>
+                      {item.title}
+                    </Typography>
+                  </ListItem>
+                </Link>
+              ))}
+            </List>
+          </AccordionDetails>
+
+        </Accordion>
 
         {/*Логотип*/}
-        <Link flexBasis={145} height={24.46} href={'/'} sx={{
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: '100% 100%'
-        }}>Logotype</Link>
+        {/*<Link flexBasis={145} height={24.46} href={'/'} sx={{*/}
+        {/*  backgroundRepeat: 'no-repeat',*/}
+        {/*  backgroundSize: '100% 100%'*/}
+        {/*}}>Logotype</Link>*/}
 
         {/*Меню*/}
-        <Box flexGrow={1} display={{medium: 'none', default: 'flex',}} justifyContent='flex-end'>
+        <Box flexGrow={1} display={{medium: 'none', default: 'flex'}} justifyContent='flex-end'>
           <ButtonGroup variant="outlined" component="nav">
             {pages.map((page) => {
               return (
