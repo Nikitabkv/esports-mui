@@ -45,6 +45,9 @@ export const getPosts = async () => {
     body: JSON.stringify({
       query,
     }),
+    next: {
+      revalidate: 10,
+    }
   });
 
   // получаем JSON из объекта Promise<Response>
@@ -84,6 +87,9 @@ export const getPost = async (slug: string | string[] | undefined) => {
     body: JSON.stringify({
       query,
     }),
+    next: {
+      revalidate: 300,
+    }
   });
 
   const json = await res.json();
