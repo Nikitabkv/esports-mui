@@ -14,7 +14,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Stack from '@mui/material/Stack';
 import Image from "next/image";
-import Logo from "/public/test/logo.svg"
+import Logo from "/public/images/logo.svg"
 
 const pages = [
   {

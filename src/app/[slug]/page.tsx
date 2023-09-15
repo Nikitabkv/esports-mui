@@ -1,7 +1,12 @@
 'use client'
+import {usePathname} from "next/navigation"
+import {getPost, getPosts} from "@/lib/api/api"
 import Box from "@mui/material/Box"
-import {getPost} from "@/lib/api/api"
-import {usePathname} from "next/navigation";
+import Stack from "@mui/material/Stack"
+import Typography from "@mui/material/Typography"
+import Divider from "@mui/material/Divider"
+import Image from "next/image";
+import AsideCard from "@/components/AsideCard/AsideCard"
 
 // const headers = {'Content-Type': 'application/json'};
 // const query = `
@@ -18,12 +23,24 @@ import {usePathname} from "next/navigation";
 const ArticlePage = async () => {
   const pathname = usePathname()
   const post = await getPost(pathname)
+  const posts = await getPosts()
 
   return (
-    <Box>
-      <h1>{post.title}</h1>
-      <div dangerouslySetInnerHTML={{__html: post.content}}/>
-    </Box>
+    <Stack direction={{medium: 'column', default: 'row'}} spacing={1}>
+      <Box padding={2} boxShadow={1} borderRadius={1} flexBasis={{medium: 'auto', default: '1034px'}} flexShrink={9}>
+        <Typography variant='h1' paddingBottom={1} fontSize={44} fontWeight={700}>
+          {post.title}
+        </Typography>
+        <Box sx={{height: '100px'}}>
+          {/*<Image src={post.featuredImage.node.mediaDetails.sizes[0].sourceUrl} height='100px' width='800px' alt={post.title} decoding={'async'}/>*/}
+        </Box>
+        <Divider/>
+        <div dangerouslySetInnerHTML={{__html: post.content}}/>
+      </Box>
+      <Box component='aside' flexBasis={352} flexShrink={5}>
+        <AsideCard posts={posts.slice(0, 8)} title={'Поплуярные статьи'}/>
+      </Box>
+    </Stack>
   )
 }
 

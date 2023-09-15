@@ -9,12 +9,7 @@ import NewsListItem from "@/components/NewsListItem/NewsListItem"
 const NewsList: FC<NewsListProps> = ({posts}) => {
 
   return (
-    <Box sx={{
-      flexBasis: {
-        medium: 'auto',
-        default: '1034px'
-      }
-    }}>
+    <Box flexBasis={{medium: 'auto', default: '1034px'}}>
       <Stack spacing={1}>
         <Divider textAlign='left' sx={{'&:before': {width: '3%'}}}>
           <Typography fontWeight={600} fontSize={{medium: 12, default: 14}} color='#ff3535'>НОВОСТИ</Typography>
