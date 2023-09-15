@@ -13,6 +13,8 @@ import AccordionDetails from "@mui/material/AccordionDetails"
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Stack from '@mui/material/Stack';
+import Image from "next/image";
+import Logo from "/public/test/logo.svg"
 
 const pages = [
   {
@@ -63,17 +65,15 @@ const Header = () => {
       <Toolbar sx={ToolBarSx}>
 
         {/* Мобильное меню */}
-        <Accordion sx={{boxShadow: 0}}>
+        <Accordion sx={{boxShadow: 0, display: {medium: 'block', default: 'none'}}}>
 
-          <Stack direction='row' alignItems='center' width='100%'>
-            <AccordionSummary
-              expandIcon={<MenuIcon />}
-            />
-
-            <Link flexBasis={145} height={24.46} href={'/'} sx={{
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '100% 100%'
-            }}>Logotype</Link>
+          <Stack direction='row' alignItems='center'>
+            <AccordionSummary sx={{margin: 0}} expandIcon={<MenuIcon />}/>
+            <Link flexBasis={156} height={27} href={'/'} sx={{
+              display: {medium: 'block', default: 'none'}
+            }}>
+              <Image src={Logo} alt={'logo'} />
+            </Link>
           </Stack>
 
           <AccordionDetails>
@@ -92,11 +92,16 @@ const Header = () => {
 
         </Accordion>
 
-        {/*Логотип*/}
-        {/*<Link flexBasis={145} height={24.46} href={'/'} sx={{*/}
-        {/*  backgroundRepeat: 'no-repeat',*/}
-        {/*  backgroundSize: '100% 100%'*/}
-        {/*}}>Logotype</Link>*/}
+        {/*Логотип */}
+        <Link flexBasis={156} height={37.15} href={'/'} sx={{
+          border: '1px solid rgba(234, 234, 234, 0.5);',
+          borderRadius: '8px',
+          paddingX: '15px',
+          paddingY: '5px',
+          display: {medium: 'none', default: 'block'}
+        }}>
+          <Image src={Logo} alt={'logo'} />
+        </Link>
 
         {/*Меню*/}
         <Box flexGrow={1} display={{medium: 'none', default: 'flex'}} justifyContent='flex-end'>
