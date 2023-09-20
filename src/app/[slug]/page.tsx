@@ -5,7 +5,6 @@ import Box from "@mui/material/Box"
 import Stack from "@mui/material/Stack"
 import Typography from "@mui/material/Typography"
 import Divider from "@mui/material/Divider"
-import Image from "next/image";
 import AsideCard from "@/components/AsideCard/AsideCard"
 
 // const headers = {'Content-Type': 'application/json'};
@@ -28,12 +27,17 @@ const ArticlePage = async () => {
   return (
     <Stack direction={{medium: 'column', default: 'row'}} spacing={1}>
       <Box padding={2} boxShadow={1} borderRadius={1} flexBasis={{medium: 'auto', default: '1034px'}} flexShrink={9}>
-        <Typography variant='h1' paddingBottom={1} fontSize={44} fontWeight={700}>
+        <Typography variant='h1' paddingBottom={2} fontSize={44} fontWeight={700}>
           {post.title}
         </Typography>
-        <Box sx={{height: '100px'}}>
-          {/*<Image src={post.featuredImage.node.mediaDetails.sizes[0].sourceUrl} height='100px' width='800px' alt={post.title} decoding={'async'}/>*/}
-        </Box>
+        <Box display={pathname.slice(1, 4) === 'cfg' ? 'none' : 'flex'}
+          sx={{
+            height: 250,
+            backgroundImage: `url(${post.featuredImage.node.mediaDetails.sizes[0].sourceUrl})`,
+            backgroundPosition: 'center',
+            borderRadius: 1
+          }}
+        />
         <Divider/>
         <div dangerouslySetInnerHTML={{__html: post.content}}/>
       </Box>
