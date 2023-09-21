@@ -6,23 +6,26 @@ import Stack from "@mui/material/Stack"
 import Typography from "@mui/material/Typography"
 import Divider from "@mui/material/Divider"
 import AsideCard from "@/components/AsideCard/AsideCard"
-
-// const headers = {'Content-Type': 'application/json'};
-// const query = `
-// query Test {
-//   posts(first: 100) {
-//     nodes {
-//       slug
-//     }
-//   }
-// }
-// `
+import {useEffect, useState} from "react";
 
 
-const ArticlePage = async () => {
+const ArticlePage = () => {
   const pathname = usePathname()
-  const post = await getPost(pathname)
-  const posts = await getPosts()
+  // const post = await getPost(pathname)
+  // const posts = await getPosts()
+
+  const [post, setPostData] = useState({
+    title: 'Загрузка',
+    content: 'Загрузка'
+  })
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    const postData = getPost(pathname)
+      .then((data) => {
+        setPostData(data)
+      })
+  }, [])
 
   return (
     <Stack direction={{medium: 'column', default: 'row'}} spacing={1}>
@@ -33,7 +36,7 @@ const ArticlePage = async () => {
         <Box display={pathname.slice(1, 4) === 'cfg' ? 'none' : 'flex'}
           sx={{
             height: 250,
-            backgroundImage: `url(${post.featuredImage.node.mediaDetails.sizes[0].sourceUrl})`,
+            // backgroundImage: `url(${post.featuredImage.node.mediaDetails.sizes[0].sourceUrl})`,
             backgroundPosition: 'center',
             borderRadius: 1
           }}
@@ -42,24 +45,10 @@ const ArticlePage = async () => {
         <div dangerouslySetInnerHTML={{__html: post.content}}/>
       </Box>
       <Box component='aside' flexBasis={352} flexShrink={5}>
-        <AsideCard posts={posts.slice(0, 8)} title={'Поплуярные статьи'}/>
+        {/*<AsideCard posts={posts.slice(0, 8)} title={'Поплуярные статьи'}/>*/}
       </Box>
     </Stack>
   )
 }
-
-// export async function generateStaticParams() {
-//   const posts = await fetch('https:/esports-24.ru/graphql', {
-//     headers,
-//     method: 'POST',
-//     body: JSON.stringify({
-//       query,
-//     }),
-//   }).then((res) => res.json())
-//
-//   return posts.map((post: { slug: any; }) => ({
-//     slug: post.slug,
-//   }))
-// }
 
 export default ArticlePage
