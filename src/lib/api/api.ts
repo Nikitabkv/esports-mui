@@ -7,7 +7,7 @@ export const getPosts = async () => {
   // формируем GraphQL запрос
   const query = `
     query Test { 
-      posts(first: 30) {
+      posts(first: 80) {
         nodes {
           date
           link
