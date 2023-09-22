@@ -26,7 +26,6 @@ const ArticlePage = async ({ params }: { params: { slug: string } }) => {
       <Box padding={2} boxShadow={1} borderRadius={1} flexBasis={{medium: 'auto', default: '1034px'}} flexShrink={9}>
         <Typography variant='h1' paddingBottom={2} fontSize={44} fontWeight={700}>
           {post.title}
-          asd
         </Typography>
         <Box
           sx={{
