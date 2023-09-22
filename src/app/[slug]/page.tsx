@@ -8,7 +8,7 @@ import AsideCard from "@/components/AsideCard/AsideCard"
 export const generateStaticParams = async () => {
   const posts = await getPosts()
 
-  return posts.map((post) => {
+  return posts.map((post: any) => {
 
     return ({
       slug: post.slug
