@@ -5,6 +5,17 @@ import Typography from "@mui/material/Typography"
 import Divider from "@mui/material/Divider"
 import AsideCard from "@/components/AsideCard/AsideCard"
 
+export const generateStaticParams = async () => {
+  const posts = await getPosts()
+
+  return posts.map((post) => {
+
+    return ({
+      slug: post.slug
+    })
+  })
+}
+
 const ArticlePage = async ({ params }: { params: { slug: string } }) => {
   const {slug} = params
   const post = await getPost(slug)
