@@ -67,6 +67,12 @@ export const getPost = async (slug: string | string[] | undefined) => {
         content
         excerpt
         slug
+        categories(first: 5) {
+          nodes {
+            link
+            name
+          }
+        }
         featuredImage {
           node {
             link

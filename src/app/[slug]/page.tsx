@@ -16,9 +16,75 @@ export const generateStaticParams = async () => {
   })
 }
 
+const wpStyles = {
+  '.wp-block-image': {
+    margin: 0,
+    padding: 1,
+    'img': {
+      borderRadius: 1,
+      width: '100%',
+      height: 'auto'
+    },
+    'figcaption': {
+      color: 'primary.dark'
+    }
+  }
+}
+
+const cfgStyles = {
+  '.wp-block-image': {
+    margin: 0,
+    padding: 1,
+    float: 'left',
+    'img': {
+      borderRadius: 1,
+      width: '100%',
+      height: 'auto'
+    },
+    'figcaption': {
+      color: 'primary.dark'
+    },
+    'mark': {
+      color: 'buttons.main'
+    }
+  },
+  '.device': {
+    padding: 1,
+    borderStyle: 'solid',
+    borderRadius: 1,
+    borderWidth: '1px',
+    borderColor: 'buttons.main',
+    height: 190,
+    float: 'none',
+    'img': {
+      width: '80px',
+      height: 'auto'
+    },
+    'figure': {
+      margin: 0,
+      width: '108px',
+    },
+    'figcaption': {
+      fontSize: '10px'
+    },
+    'mark': {
+      fontSize: '10px'
+    }
+  },
+  '.wp-block-columns': {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: 2
+  },
+  '.is-style-rounded': {
+    borderRadius: 20
+  }
+}
+
 const ArticlePage = async ({ params }: { params: { slug: string } }) => {
   const {slug} = params
   const post = await getPost(slug)
+
   const posts = await getPosts()
 
   return (
@@ -28,6 +94,7 @@ const ArticlePage = async ({ params }: { params: { slug: string } }) => {
           {post.title}
         </Typography>
         <Box
+          display={post.categories.nodes[0].name === 'CFG Игроков' ? 'none' : 'flex'}
           sx={{
             height: 250,
             backgroundImage: `url(${post.featuredImage.node.mediaDetails.sizes[0].sourceUrl})`,
@@ -36,7 +103,12 @@ const ArticlePage = async ({ params }: { params: { slug: string } }) => {
           }}
         />
         <Divider/>
-        <div dangerouslySetInnerHTML={{__html: post.content}}/>
+        <Box
+          dangerouslySetInnerHTML={{__html: post.content}}
+          display={'flex'}
+          flexDirection={'column'}
+          sx={post.categories.nodes[0].name === 'CFG Игроков' ? cfgStyles : wpStyles }
+        />
       </Box>
       <Box component='aside' flexBasis={352} flexShrink={5}>
         <AsideCard posts={posts.slice(0, 8)} title={'Поплуярные статьи'}/>
