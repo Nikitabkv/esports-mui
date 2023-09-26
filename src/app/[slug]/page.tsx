@@ -28,6 +28,9 @@ const wpStyles = {
     'figcaption': {
       color: 'primary.dark'
     }
+  },
+  'img': {
+    height: 'auto'
   }
 }
 
@@ -39,7 +42,6 @@ const cfgStyles = {
     'img': {
       borderRadius: 1,
       width: '100%',
-      height: 'auto'
     },
     'figcaption': {
       color: 'primary.dark'
@@ -78,6 +80,9 @@ const cfgStyles = {
   },
   '.is-style-rounded': {
     borderRadius: 20
+  },
+  'img': {
+    height: 'auto'
   }
 }
 
