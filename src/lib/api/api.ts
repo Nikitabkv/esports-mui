@@ -193,3 +193,46 @@ export const getPopularPosts = async () => {
   return json.data?.posts.nodes;
 
 }
+
+export const getPopularCfg = async () => {
+  const query = `
+    query PopularCfg {
+     posts(first: 10, where: {orderby: {field: COMMENT_COUNT, order: DESC}, categoryName: "cs-cfg"}) {
+    nodes {
+      date
+      slug
+      link
+      title
+      id
+      categories(first: 5) {
+        nodes {
+          link
+          name
+        }
+      }
+    }
+  }
+}
+  `
+
+  // Первым аргументом метода fetch указываем GraphQL ендпоинт,
+  // который мы определили в настройках CMS.
+  // Второй аргумент - объект запроса.
+  const res = await fetch('https://esports-24.ru/graphql', {
+    headers,
+    method: 'POST',
+    body: JSON.stringify({
+      query,
+    }),
+    next: {
+      revalidate: 30,
+    }
+  });
+
+  // получаем JSON из объекта Promise<Response>
+  const json = await res.json();
+
+  // возвращаем посты
+  return json.data?.posts.nodes;
+
+}
