@@ -1,4 +1,4 @@
-import {getPopularPosts, getPost, getPosts, getPostsByCategory} from "@/lib/api/api"
+import {getPopularCfg, getPopularPosts, getPost, getPosts, getPostsByCategory} from "@/lib/api/api"
 import Box from "@mui/material/Box"
 import Stack from "@mui/material/Stack"
 import Typography from "@mui/material/Typography"
@@ -89,9 +89,11 @@ const cfgStyles = {
 const ArticlePage = async ({ params }: { params: { slug: string } }) => {
   const {slug} = params
   const post = await getPost(slug)
+  const isCfg = post.categories.nodes[0].name === 'CFG Игроков'
   const category = post.categories.nodes[0].name === 'Dota 2' ? 'Dota' : post.categories.nodes[0].name
   const similarPosts = await getPostsByCategory(category)
   const popularPosts = await getPopularPosts()
+  const popularCfg = await getPopularCfg()
 
 
   return (
@@ -114,12 +116,12 @@ const ArticlePage = async ({ params }: { params: { slug: string } }) => {
           dangerouslySetInnerHTML={{__html: post.content}}
           display={'flex'}
           flexDirection={'column'}
-          sx={post.categories.nodes[0].name === 'CFG Игроков' ? cfgStyles : wpStyles }
+          sx={isCfg ? cfgStyles : wpStyles }
         />
       </Box>
       <Box display={'flex'} flexDirection={'column'} component='aside' flexBasis={352} flexShrink={5} gap={1} position={'sticky'} top={'-745px'} height={'fit-content'}>
-        <AsideCard posts={similarPosts} title={`Статьи на тему: ${category}`}/>
-        <AsideCard posts={popularPosts} title={`Обсуждаемые`}/>
+        <AsideCard posts={isCfg ? popularCfg : similarPosts} title={isCfg ? 'Популярные CFG' : `Статьи на тему: ${category}`}/>
+        <AsideCard posts={popularPosts} title={`Популярное`}/>
       </Box>
     </Stack>
   )
