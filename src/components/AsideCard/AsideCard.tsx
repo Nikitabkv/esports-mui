@@ -9,7 +9,7 @@ import AsideCardItem from "@/components/AsideCard/AsideCardItem/AsideCardItem"
 const AsideCard: FC<AsideCardProps> = ({title, posts}) => {
 
   return (
-    <Card sx={{padding: '16px', position: 'sticky', top: '8px', height: 'fit-content'}}>
+    <Card sx={{padding: '16px', height: 'fit-content'}}>
       <Typography fontSize={19} fontWeight={600} color={'#ff3535'} pb={2} textAlign='center' noWrap variant='h3'>
         {title.toUpperCase()}
       </Typography>
