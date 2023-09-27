@@ -162,10 +162,6 @@ export const getPost = async (slug: string | string[] | undefined) => {
 
   const json = await res.json();
 
-  console.log('----------start------------')
-  console.log(json.data?.post)
-  console.log('----------end------------')
-
   if (json.data?.post === null) {
     return redirect('/')
   }
@@ -262,7 +258,7 @@ export const getPopularCfg = async () => {
 export const getCategories = async () => {
   const query = `
   query getCategories {
-    categories(first: 50) {
+    categories(first: 35) {
       nodes {
         slug
       }
