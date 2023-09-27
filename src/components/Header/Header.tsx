@@ -23,19 +23,19 @@ const pages = [
   },
   {
     title: 'Dota 2',
-    link: '/dota'
+    link: '/category/dota'
   },
   {
     title: 'CS:GO',
-    link: '/csgo'
+    link: '/category/csgo'
   },
   {
     title: 'CFG Игроков',
-    link: '/404'
+    link: '/category/cs-cfg'
   },
   {
     title: 'Прогнозы',
-    link: '/404'
+    link: '/category/predictions'
   }
 ]
 

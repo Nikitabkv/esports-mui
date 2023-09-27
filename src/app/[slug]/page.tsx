@@ -106,7 +106,7 @@ const ArticlePage = async ({ params }: { params: { slug: string } }) => {
           display={post.categories.nodes[0].name === 'CFG Игроков' ? 'none' : 'flex'}
           sx={{
             height: 250,
-            backgroundImage: `url(${post.featuredImage.node.mediaDetails.sizes[0].sourceUrl})`,
+            backgroundImage: `url(${post.featuredImage.node.mediaDetails.sizes === null ? '' : post.featuredImage.node.mediaDetails.sizes[0].sourceUrl})`,
             backgroundPosition: 'center',
             borderRadius: 1
           }}
@@ -120,7 +120,7 @@ const ArticlePage = async ({ params }: { params: { slug: string } }) => {
         />
       </Box>
       <Box display={'flex'} flexDirection={'column'} component='aside' flexBasis={352} flexShrink={5} gap={1} position={'sticky'} top={'-745px'} height={'fit-content'}>
-        <AsideCard posts={isCfg ? popularCfg : similarPosts} title={isCfg ? 'Популярные CFG' : `Статьи на тему: ${category}`}/>
+        <AsideCard posts={isCfg ? popularCfg.slice(0, 8) : similarPosts.slice(0, 8)} title={isCfg ? 'Популярные CFG' : `Статьи на тему: ${category}`}/>
         <AsideCard posts={popularPosts} title={`Популярное`}/>
       </Box>
     </Stack>
