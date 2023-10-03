@@ -3,6 +3,10 @@ import {createTheme} from '@mui/material/styles';
 
 declare module "@mui/material/styles" {
   interface Palette {
+    mainColors: {
+      base: string,
+      baseLight: string,
+    },
     buttons: {
       main: string,
       light: string,
@@ -13,6 +17,10 @@ declare module "@mui/material/styles" {
   }
 
   interface PaletteOptions {
+    mainColors: {
+      base: string,
+      baseLight: string,
+    },
     buttons: {
       main: string,
       light: string,
@@ -52,6 +60,10 @@ const theme = createTheme({
       light: '#ffffff',
       dark: '#c7c7c7',
       contrastText: '#000000',
+    },
+    mainColors: {
+      base: '#ff3535',
+      baseLight: '#ff3535db'
     },
     buttons: {
       main: '#ff3535',
