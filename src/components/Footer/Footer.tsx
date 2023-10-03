@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import Link from "@mui/material/Link"
 
 
 const Footer = () => {
@@ -11,7 +12,7 @@ const Footer = () => {
         <Box>18+</Box>
         <Stack direction='row' spacing={2}>
           <Typography>О нас</Typography>
-          <Typography>Документы</Typography>
+          <Link href='/contact' underline='none'>Контакты</Link>
           <Typography>©️ Esports-24.ru</Typography>
         </Stack>
       </Stack>
