@@ -1,3 +1,4 @@
+"use client"
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -6,15 +7,18 @@ import Link from '@mui/material/Link'
 import SvgIcon from '@mui/material/SvgIcon'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
+import Input from '@mui/material/Input';
 import MenuIcon from '@mui/icons-material/Menu'
-import Accordion from "@mui/material/Accordion";
+import Accordion from "@mui/material/Accordion"
 import AccordionSummary from "@mui/material/AccordionSummary"
 import AccordionDetails from "@mui/material/AccordionDetails"
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import Stack from '@mui/material/Stack';
-import Image from "next/image";
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import Stack from '@mui/material/Stack'
+import Image from "next/image"
+import SearchIcon from '@mui/icons-material/Search'
 import Logo from "/public/images/logo.svg"
+import {useState} from "react"
 
 const pages = [
   {
@@ -57,6 +61,19 @@ const ButtonSx = {
     bgcolor: 'buttons.hover',
     color: 'white',
   }
+}
+
+const Search = () => {
+  const [searchIsOpen, setSearchIsOpen] = useState(true)
+
+  return(
+      <>
+        <Box display={searchIsOpen ? 'flex' : 'none'}>
+          <Input placeholder="Placeholder" />
+        </Box>
+        <SearchIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} onClick={() => setSearchIsOpen(!searchIsOpen)}/>
+      </>
+  )
 }
 
 const Header = () => {
@@ -104,7 +121,7 @@ const Header = () => {
         </Link>
 
         {/*Меню*/}
-        <Box flexGrow={1} display={{medium: 'none', default: 'flex'}} justifyContent='flex-end'>
+        <Box flexGrow={1} display={{medium: 'none', default: `flex`}} justifyContent='flex-end'>
           <ButtonGroup variant="outlined" component="nav">
             {pages.map((page) => {
               return (
@@ -124,6 +141,8 @@ const Header = () => {
             })}
           </ButtonGroup>
         </Box>
+
+        <Search />
 
       </Toolbar>
     </AppBar>
