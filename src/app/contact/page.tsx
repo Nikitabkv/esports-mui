@@ -5,7 +5,7 @@ import MusicNoteRoundedIcon from '@mui/icons-material/MusicNoteRounded'
 import GroupRoundedIcon from '@mui/icons-material/GroupRounded'
 import ArticleRoundedIcon from '@mui/icons-material/ArticleRounded'
 
-const CsgoPage = () => {
+const ContactPage = () => {
     return (
         <Box>
           <Box boxShadow={1} borderRadius={1} p={2} mb={1}>
@@ -95,4 +95,4 @@ const CsgoPage = () => {
     );
 }
 
-export default CsgoPage
+export default ContactPage

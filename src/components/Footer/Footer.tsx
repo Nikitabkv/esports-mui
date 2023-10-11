@@ -11,8 +11,8 @@ const Footer = () => {
       <Stack direction='column' alignItems='flex-end' flexBasis={1440} px={4}>
         <Box>18+</Box>
         <Stack direction='row' spacing={2}>
-          <Typography>О нас</Typography>
-          <Link href='/contact' underline='none'>Контакты</Link>
+          <Link href='/about' color='primary.contrastText' underline='none'>О нас</Link>
+          <Link href='/contact' color='primary.contrastText' underline='none'>Контакты</Link>
           <Typography>©️ Esports-24.ru</Typography>
         </Stack>
       </Stack>
